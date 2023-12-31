@@ -12,7 +12,7 @@
 
 <nav>
     <div class="logo">
-        <img src="/images/home/logo1.jpg">
+        <img src="/images/home/warung_joglo.jpg">
     </div>
 
     <ul>
