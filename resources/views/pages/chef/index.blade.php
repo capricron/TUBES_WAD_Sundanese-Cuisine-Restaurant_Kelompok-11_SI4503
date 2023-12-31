@@ -10,10 +10,21 @@
 
 <div class="content-body p-3">
     <div class="m-3">
-        <h1>Daftar Order Pesanan</h1>
+        <h1>Selamat datang, chef {{ $chef->name }}</h1>
+    </div>
+
+    <div class="m-3">
+        <h3>Daftar Order Pesanan</h3>
     </div>
 
     {{-- looping meja --}}
+   {{-- jika meja kosong tampilkan tidak ada pesanan hari ini --}}
+    @if ($meja->count() == 0)
+        <div style="margin-top:  200px" class="text-center">
+            <h3>Sedang tidak ada pesanan :(</h3>
+        </div>
+    @endif
+
     @foreach ($meja as $m )
     <div class="border border-dark">
         <h4>Meja {{ $m->id }}</h4>

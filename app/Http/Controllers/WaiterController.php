@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tables;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WaiterController extends Controller
 {
     public function indexWaiter(){
+
+        $waiter = User::where('id', auth()->user()->id)->first();
 
         // carikan meja yang memiliki reserve berstatus 0 serta order yang masih antri atau dimasak
         $meja = Tables::whereHas('reserve', function($query){
@@ -16,7 +19,7 @@ class WaiterController extends Controller
             });
         })->get();
 
-        return view('pages.waiter.index', compact('meja'));
+        return view('pages.waiter.index', compact('meja', 'waiter'));
     }
 
     public function orderStatus(){

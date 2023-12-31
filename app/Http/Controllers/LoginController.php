@@ -10,7 +10,7 @@ class LoginController extends Controller
 
     public function pengelola()
     {
-        return view('pages.login.pengelola');
+        return view('pages.login.index');
     }
 
 

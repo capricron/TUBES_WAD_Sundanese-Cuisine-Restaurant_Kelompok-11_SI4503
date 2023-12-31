@@ -10,8 +10,18 @@
 
 <div class="content-body p-3">
     <div class="m-3">
-        <h1>Daftar Order Pesanan</h1>
+        <h1>Selamat datang, waiter {{ $waiter->name }}</h1>
     </div>
+
+    <div class="m-3">
+        <h3>Daftar Order Pesanan</h3>
+    </div>
+
+    @if ($meja->count() == 0)
+    <div style="margin-top: 200px" class="text-center">
+        <h3>Sedang tidak ada pesanan :(</h3>
+    </div>
+    @endif
 
     {{-- looping meja --}}
     @foreach ($meja as $m )
