@@ -41,6 +41,12 @@
                             <span>Transaksi</span>
                         </a>
                     <li>
+                    <li>
+                        <a href="/logout">
+                            <span class="material-symbols-outlined" style="font-size: 24px; margin-right: 8px">logout</span>
+                            <span>Logout</span>
+                        </a>
+                    <li>
                 </ul>
             </li>
         </ul>

@@ -14,6 +14,36 @@
         Sidebar end
     ***********************************-->
 
+    @if (session('delete'))
+    <script>
+        Swal.fire(
+            'Sukses Dihapus',
+            'Berhasil menghapus data menu makanan',
+            'success'
+        )
+    </script>
+    @endif
+
+    @if (session('add'))
+        <script>
+            Swal.fire(
+                'Sukses Ditambah',
+                'Berhasil menambah data menu makanan',
+                'success'
+            )
+        </script>
+    @endif
+
+    @if (session('edit'))
+    <script>
+        Swal.fire(
+            'Sukses Diedit',
+            'Berhasil mengubah data menu makanan',
+            'success'
+        )
+    </script>
+    @endif
+
     <!--**********************************
         Content body start
     ***********************************-->

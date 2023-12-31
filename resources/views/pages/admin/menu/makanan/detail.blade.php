@@ -12,7 +12,15 @@
 <!--**********************************
     Sidebar end
 ***********************************-->
-
+@if (session('error'))
+<script>
+    Swal.fire(
+        'Tidak dapat menghapus menu makanan',
+        'Menu makanan tidak dapat dihapus karena ada di transaksi tetapi kamu dapat mengubah status nya menjadi tidak tersedia',
+        'error'
+    )
+</script>
+@endif
 <!--**********************************
     Content body start
 ***********************************-->

@@ -67,7 +67,7 @@ class OrderController extends Controller
         $reserve->transaksi_id = 'TRX-'. $randomNumbers . "-" . $randomLetters;
         $reserve->table_id = $request->table;
         $reserve->total_harga = $totalHarga;
-        $reserve->status = 0;
+        $reserve->status = "menunggu";
 
         $reserve->save();
 
@@ -91,16 +91,10 @@ class OrderController extends Controller
         $meja = session('meja');
 
         // ambil daftar pesanan sesuai table id dan yang berstatus 0
-        $reserve = Reserve::where('table_id', $meja)->where('status', 0)->first();
-
-        // ambil semua daftar order yang dipesan sesuai meja
-        $orders = Orders::where('reserve_id', $reserve->id)->get();
-
-        // ambil semua daftar meja
-        $table = Tables::where('id', $meja)->first();
+        $reserve = Reserve::where('table_id', $meja)->where('status', "menunggu")->first();
 
         // update status menjadi 1
-        $reserve->status = 1;
+        $reserve->status = "kekasir";
         $reserve->save();
 
         // hapus session meja

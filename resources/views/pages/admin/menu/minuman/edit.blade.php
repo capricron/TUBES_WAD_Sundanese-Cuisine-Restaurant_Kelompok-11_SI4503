@@ -20,50 +20,50 @@
 
     <div class="mt-3">
         <div class="flex-column d-flex">
-            <div class="menu-makanan justify-content-end m-1">
-              <h1>Tambah Makanan</h1>
+            <div class="menu-minuman justify-content-end m-1">
+              <h1>Tambah Minuman</h1>
             </div>
           </div>
     </div>
 
     <div class="form-add mt-5">
-        <form id="form-unggah" action="/admin/menu/makanan/{{ $minuman->slug }}" enctype="multipart/form-data" method="POST">
+        <form id="form-unggah" action="/admin/menu/minuman/{{ $minuman->slug }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nama">Gambar Makanan</label>
+                <label for="nama">Gambar Minuman</label>
                 <input name="image" id="input-gambar" type="file" class="form-control input-default" placeholder="Input Default">
                 <img id="preview-gambar" src="{{ asset($minuman->image) }}" width="300px" alt="Preview Gambar" >
             </div>
 
             <div class="form-group">
-                <label for="nama">Nama Makanan</label>
-                <input name="name" type="text" value={{ $minuman->name }} class="form-control" id="nama" placeholder="Masukkan nama makanan" required>
+                <label for="nama">Nama Minuman</label>
+                <input name="name" type="text" value={{ $minuman->name }} class="form-control" id="nama" placeholder="Masukkan nama Minuman" required>
             </div>
 
             <div class="form-group">
-                <label for="deskripsi">Deskripsi Makanan</label>
-                <textarea name="description" class="form-control" id="deskripsi" rows="3" placeholder="Masukkan deskripsi makanan" required>{{ $minuman->description }}</textarea>
+                <label for="deskripsi">Deskripsi Minuman</label>
+                <textarea name="description" class="form-control" id="deskripsi" rows="3" placeholder="Masukkan deskripsi Minuman" required>{{ $minuman->description }}</textarea>
             </div>
 
             <div class="form-group">
-                <label for="harga">Harga Makanan</label>
-                <input name="price" value={{ $minuman->price }} type="number" class="form-control" id="harga" placeholder="Masukkan harga makanan" required>
+                <label for="harga">Harga Minuman</label>
+                <input name="price" value={{ $minuman->price }} type="number" class="form-control" id="harga" placeholder="Masukkan harga Minuman" required>
             </div>
 
             <div class="form-group">
-                <label for="stock">Stock Makanan</label>
-                <input name="stock" value={{ $minuman->stock }} type="number" class="form-control" id="stock" placeholder="Masukkan stock makanan" required>
+                <label for="stock">Stock Minuman</label>
+                <input name="stock" value={{ $minuman->stock }} type="number" class="form-control" id="stock" placeholder="Masukkan stock Minuman" required>
             </div>
 
             <div class="form-group">
-                <label for="stock">Status Makanan</label>
+                <label for="stock">Status Minuman</label>
                 <select name="status" class="form-control" id="status" required>
                     <option value="tersedia" {{ $minuman->status == true ? 'selected' : '' }}>Tersedia</option>
                     <option value="habis" {{ $minuman->status == false ? 'selected' : '' }}>Habis</option>
                 </select>
             </div>
 
-            <button class="btn btn-success" type="submit" >Edit Makanan</button>
+            <button class="btn btn-success" type="submit" >Edit Minuman</button>
         </form>
     </div>
 

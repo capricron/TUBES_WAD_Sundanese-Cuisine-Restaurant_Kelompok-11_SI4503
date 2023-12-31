@@ -53,7 +53,7 @@
     <section id="Home">
         <nav>
             <div class="logo">
-                <img src="/images/home/logo1.jpg">
+                <img src="/images/home/warung_joglo.jpg">
             </div>
 
             <ul>
@@ -66,7 +66,11 @@
             </ul>
             <div class="icon">
                 @if($meja)
-                <div> Your Order </div>
+                <div>
+                    <a href="/order">
+                        Your Order
+                    </a>
+                </div>
                 @else
                 <div class="icon">
                     <a href="/cart">
@@ -95,7 +99,7 @@
         </div>
 
         <p>
-           Restoran sunda ini merupakan sunda yng sangat enak
+           Restoran jawa ini adalah restoran yang menyediakan menu khas jawa yang sangat enak
         </p>
 
         <div class="main_btn">
@@ -162,7 +166,7 @@
 
     <!--Gallary-->
 
-    <div class="gallary" id="Gallary">
+    {{-- <div class="gallary" id="Gallary">
         <h1>Our<span>Gallary</span></h1>
 
         <div class="gallary_image_box">
@@ -228,7 +232,7 @@
 
         </div>
 
-    </div>
+    </div> --}}
 
     <!--Review-->
 
@@ -389,7 +393,7 @@
     </div>
 
     <!--Order-->
-
+{{--
     <div class="order" id="Order">
         <h1><span>Order</span>Now</h1>
 
@@ -437,7 +441,7 @@
 
         </div>
 
-    </div>
+    </div> --}}
 
     <!--Team-->
 

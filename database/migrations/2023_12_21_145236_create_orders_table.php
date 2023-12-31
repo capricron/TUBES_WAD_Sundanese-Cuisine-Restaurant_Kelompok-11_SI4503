@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('reserve_id');
-            $table->string('menu_id');
+            $table->foreignId('menu_id')->constrained('menus');
             $table->integer('quantity');
             $table->string('status');
             $table->timestamps();

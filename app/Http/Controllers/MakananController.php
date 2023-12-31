@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use Exception;
 use Illuminate\Http\Request;
 
 class MakananController extends Controller
@@ -75,7 +76,7 @@ class MakananController extends Controller
         $menu->save();
 
         // redirect to admin menu makanan
-        return redirect()->route('admin.menu.makanan');
+        return redirect()->route('admin.menu.makanan')->with('add', 'Item successfully deleted.');
     }
 
     public function detailAdminMakanan($slug){
@@ -155,7 +156,7 @@ class MakananController extends Controller
         $makanan->save();
 
         // redirect to admin menu makanan
-        return redirect()->route('admin.menu.makanan');
+        return redirect()->route('admin.menu.makanan')->with('edit', 'Item successfully deleted.');
 
     }
 
@@ -164,14 +165,22 @@ class MakananController extends Controller
         // get menu by slug
         $makanan = \App\Models\Menu::where('slug', $slug)->first();
 
+
+        try{
+            $makanan->delete();
+        }catch(Exception $e){
+            return redirect()->back()->with('error', 'Menu tidak dapat dihapus karena sudah terdapat di transaksi');
+        }
+
         // hapus file lama
         unlink(public_path($makanan->image));
 
         // delete menu
-        $makanan->delete();
 
         // redirect to admin menu makanan
-        return redirect()->route('admin.menu.makanan');
+
+        // back to with delete
+        return redirect()->route('admin.menu.makanan')->with('delete', 'Item successfully deleted.');
     }
 
 }

@@ -14,10 +14,10 @@ class TransactionController extends Controller
     {
 
         // get all transaction
-        $transaction_true = Reserve::where('status', 1)->get();
+        $transaction_true = Reserve::where('status', "terbayar")->get();
 
         // dapat semua transaksi yang berstatus false serta pastikan semua order yang berelasi status selesai
-        $transaction_false = Reserve::where('status', 0)->whereHas('order', function($query){
+        $transaction_false = Reserve::where('status', "kekasir")->whereHas('order', function($query){
             $query->where('status', "selesai");
         })->get();
 
@@ -101,13 +101,13 @@ class TransactionController extends Controller
         }
 
         // ubah status menjadi 1
-        $transaksi->status = 1;
+        $transaksi->status = "terbayar";
 
         // simpan transaksi
         $transaksi->save();
 
         // return view
-        return redirect()->route('transaction.index')->with('success', 'Transaksi berhasil dibayar');
+        return redirect()->route('transaction.index')->with('success', 'Costumer membayar '.$request->uang_bayar.' dengan total '.$transaksi->total_harga.' maka kembalianya adalah '.$transaksi->uang_kembali);
 
         // // jika uang bayar lebih maka beri kembalian
         // if($transaksi->total < $transaksi->uang_bayar){

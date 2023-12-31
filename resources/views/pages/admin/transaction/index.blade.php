@@ -16,7 +16,8 @@
         <script>
             Swal.fire(
                 'Transaksi Suksess',
-                'Berhasil melakukan transaksi',
+                // tampilkan session
+                '{{ session('success') }}',
                 'success'
             )
         </script>
@@ -71,7 +72,7 @@
                             <td>{{ $item->total_harga}}</td>
                             <td>{{ $item->created_at}}</td>
                             <td>
-                                <a href="transaction/{{ $item->transaksi_id }}/detail">
+                                <a href="transaction/{{ $item->transaksi_id }}">
                                     <button class="btn btn-primary">Detail</button>
                                 </a>
                             </td>

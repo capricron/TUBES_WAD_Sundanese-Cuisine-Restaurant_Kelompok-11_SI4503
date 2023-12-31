@@ -12,7 +12,15 @@
 <!--**********************************
     Sidebar end
 ***********************************-->
-
+@if (session('error'))
+<script>
+    Swal.fire(
+        'Tidak dapat menghapus menu minuman',
+        'Menu minuman tidak dapat dihapus karena ada di transaksi tetapi kamu dapat mengubah status nya menjadi tidak tersedia',
+        'error'
+    )
+</script>
+@endif
 <!--**********************************
     Content body start
 ***********************************-->
@@ -30,9 +38,16 @@
         <form id="form-unggah" action="/admin/menu/minuman" enctype="multipart/form-data" method="POST">
             @csrf
 
-            <a  href="/admin/menu/minuman/{{ $minuman->slug }}/edit">
-                <button class="btn btn-warning mb-5" type="button">Edit minuman</button>
-            </a>
+            <div class="flex">
+                <a  href="/admin/menu/minuman/{{ $minuman->slug }}/edit">
+                    <button class="btn btn-warning mb-5" type="button">Edit Minuman</button>
+                </a>
+                <a  href="/admin/menu/minuman/{{ $minuman->slug }}/delete">
+                    <button class="btn btn-danger mb-5" type="button">Hapus Minuman</button>
+                </a>
+            </div>
+
+
 
             <div class="form-group">
                 <label for="nama">Gambar minuman</label>

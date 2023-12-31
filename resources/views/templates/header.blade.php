@@ -40,7 +40,7 @@
                     <b class="logo-abbr"><img src="/images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="/images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="/images/logo-text.png" alt="">
+                        <img width="60px" src="../../images/home/warung_joglo.jpg" alt="">
                     </span>
                 </a>
             </div>
