@@ -43,13 +43,13 @@
 		              <input type="password" name="password" class="form-control" placeholder="Password" name="password" required>
 		            </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+		            	<button type="submit" style="background: rgb(93, 93, 209) !important" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
 		            </div>
 		            <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
-			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
+			            	<label class="checkbox-wrap checkbox-primary mb-0" style="color: rgb(93, 93, 209)">Remember Me
+									  <input type="checkbox" style="color: rgb(93, 93, 209) !important" checked>
+									  <span class="checkmark" style="background: rgb(93, 93, 209) !important"></span>
 										</label>
 									</div>
 									<div class="w-50 text-md-right">
@@ -57,7 +57,7 @@
 									</div>
 		            </div>
 		          </form>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+		          <p class="text-center">Not a member? <a data-toggle="tab" href="#signup" style="color: rgb(93, 93, 209)">Sign Up</a></p>
 		        </div>
 		      </div>
 				</div>

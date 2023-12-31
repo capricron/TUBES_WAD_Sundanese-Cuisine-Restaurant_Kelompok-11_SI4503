@@ -62,7 +62,6 @@
                 <li><a href="#Menu">Menu</a></li>
                 <li><a href="#Gallary">Gallary</a></li>
                 <li><a href="#Review">Review</a></li>
-                <li><a href="#Order">Order</a></li>
             </ul>
             <div class="icon">
                 @if($meja)
@@ -89,7 +88,7 @@
 
         <div class="main">
             <div class="men_text">
-                <h1>Get Fresh<span>Food</span><br>in a Easy Way</h1>
+                <h1>Get Fresh<span style="color: rgb(93, 93, 209)">Food</span><br>in a Easy Way</h1>
             </div>
 
             <div class="main_image">
@@ -102,7 +101,7 @@
            Restoran jawa ini adalah restoran yang menyediakan menu khas jawa yang sangat enak
         </p>
 
-        <div class="main_btn">
+        <div class="main_btn" style="background: rgb(93, 93, 209) !important">
             <a href="#menu_makanan">Order Now</a>
             <i class="fa-solid fa-angle-right"></i>
         </div>
@@ -112,7 +111,7 @@
     <!--Menu-->
 
     <div class="menu" id="Menu">
-        <h1>Our<span>Foods</span></h1>
+        <h1>Our<span style="color: rgb(93, 93, 209)">Foods</span></h1>
 
         <div class="menu_box" id="menu_makanan">
 
@@ -124,7 +123,7 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>{{ $m->name }}</h2>
+                    <h2 style="color: rgb(93, 93, 209)">{{ $m->name }}</h2>
                     <p class="p-3">
                         {{ $m->description }}
                     </p>
@@ -137,7 +136,7 @@
 
         </div>
 
-        <h1>Our<span>Drink</span></h1>
+        <h1>Our<span style="color: rgb(93, 93, 209)">Drink</span></h1>
 
         <div class="menu_box">
 
@@ -149,7 +148,7 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>{{ $m->name }}</h2>
+                    <h2 style="color: rgb(93, 93, 209)">{{ $m->name }}</h2>
                     <p class="p-3">
                         {{ $m->description }}
                     </p>
@@ -237,7 +236,7 @@
     <!--Review-->
 
     <div class="review" id="Review">
-        <h1>Customer<span>Review</span></h1>
+        <h1>Customer<span style="color: rgb(93, 93, 209)">Review</span></h1>
 
         <div class="review_box">
             <div class="review_card">
@@ -393,9 +392,9 @@
     </div>
 
     <!--Order-->
-{{--
+
     <div class="order" id="Order">
-        <h1><span>Order</span>Now</h1>
+        {{-- <h1><span>Order</span>Now</h1>
 
         <div class="order_main">
 
@@ -439,14 +438,14 @@
 
             </form>
 
-        </div>
+        </div> --}}
 
-    </div> --}}
+    </div>
 
     <!--Team-->
 
     <div class="team">
-        <h1>Our<span>Team</span></h1>
+        <h1>Our<span style="color: rgb(93, 93, 209)">Team</span></h1>
 
         <div class="team_box">
             <div class="profile">
